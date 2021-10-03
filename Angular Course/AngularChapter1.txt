@@ -1,0 +1,56 @@
+Angular chapter 1:
+
+https://github.com/DeborahK/Angular-GettingStarted/blob/master/APM-Final/src/app/products/product-list.component.html
+
+-to create angular project:
+ng new [project name] --prefix pm
+
+-to see the file and dir:
+dir
+
+
+-Angular component:
+
+Imports: import {Component } from '@angular/core';
+
+Metadata : component decorator: @Component({value})
+
+Class
+
+-Bootstraping our app component:
+host the application in index.html most probably
+
+defining the angular module
+
+(index.html contains the main page for the application, this is only true web page for the application, Hence the angular application often called single page application(SPA))
+
+
+browser -> index.html -> app.component.ts -> app.module.ts (class, ngmoduleindicator, import)
+
+
+-directives:
+custom html syntax
+
+
+-class->code 
+Decorator-> Template and Metadata
+Import what we need
+
+Templates,
+Interpolation,
+Directives
+
+-power up html:
+Data binding
+Angular directive custome html syntax
+Angular component
+
+-component:
+Template
+class(code + method)
+metadata
+
+
+-install bootstap and font-awesome:
+npm install bootstrap font-awesome
+

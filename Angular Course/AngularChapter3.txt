@@ -1,0 +1,136 @@
+		More on components
+
+strong typing and interfaces :
+
+encapsulating styles :
+
+lifecycle hooks :
+
+custom pipes :
+
+Nested components :
+
+--> defining interface:
+for custom types we can define an interface :
+An interface is a specification identifying a related set of properties and methods:
+
+two ways to use an interface :
+1. as a type:  for strong typing
+ex:
+export interface Iproduct{
+productid: number;
+productname: string;
+releasedate:string;
+}
+use :
+import {Iproduct} from './product';
+products: Iproduct[] = []; 
+
+2. as a feature set:
+
+export interface DoTiming {
+Count: number ;
+start(index:number): void;
+stop():void;
+}
+
+use:
+export class mycomponent implements DoTiming{
+count: number = 0 ;
+start(index:number): void{}
+stop(): void{}
+}
+
+--> encapsulating component style:
+
+style :
+@component({
+selector: 'pm-product',
+templateUrl: '',
+styles: ['thead {color: #337AB7;}']
+})
+
+styleUrls:
+@component({
+selector: 'pm-product',
+templateUrl: '',
+styleUrls: ['filename.css']
+})
+
+ --> component lifecycle hook
+create -> render -> create and render its children -> process changes -> destoy 
+
+life cycle hook is an interface we implement to write code when a component lifecycle event occurs.
+
+types:
+Oninit: perform component initialization, retrieve data.
+use:
+2. import { component, OnInit } from '@angular/core';
+1. export class component implements OnInit {
+
+3. ngOnInit(): void {
+}
+
+}
+
+
+
+Onchanges : perform action after change to input properties.
+
+Ondestroy : to cleanup befor destroy
+
+
+--> Creating custom pipes:
+
+import {Pipe, PipeTransform} from '@angular/core';
+@Pipe({
+name: 'convertToSpaces'
+})
+
+export class convertToSpacesPipe implements PipeTransform{
+transform(value: string,
+character: string): string{
+}
+}
+
+using a custom pipe:
+template: 
+<td> {{product.productCode | convertToSpaces: '-'}}</td>
+pipe: 
+transform(value: string, character: string): string{
+}
+
+we need to inform the module where the component is:
+
+ app.module.ts:
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    convertToSpacesPipe 
+  ], 
+
+
+
+--> getter and setter in javascript:
+
+same as c#
+
+
+--> filterting and arrow function
+
+
+  performFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.products.filter((product: IProduct) =>
+      product.productName.toLocaleLowerCase().includes(filterBy));
+  }
+
+
+-> input from given nested component to cotainer component
+using @input()  decorator function
+
+-> output from given container component to nested component
+using @output decorator event emmitter;
+
+

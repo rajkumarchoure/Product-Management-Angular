@@ -1,0 +1,98 @@
+Angular Chapter 2:
+
+ngmodule({
+declaration: [
+our own created ng components, directives and pipes are declare here.]
+imports: {
+module and packages using from external source for ng component, directive and pipes are imported here.
+}
+
+
+})
+   ---componnent as directive---
+
+-Angular directive :
+
+1. product-list.component.ts:
+ @Component({
+    selector:'pm-products',//with this we can make it's template as directive and use its template using its selector = <pm-product></pm-product>
+   templateUrl: './product-list.component.html'
+   
+})
+
+we should find it by app.module.ts
+
+2. app.component.ts:
+@Component({//Component decorator
+selector: 'pm-root',
+template: `
+<div>
+<h1>
+{{pageTitle}}
+</h1>
+<pm-products></pm-products>
+</div>`
+})`
+
+-appmodule: set the boundary for context in which it resolves the directives and dependency
+appcomponentmodule(bootstrap), browsermodule, 
+
+3. app.module.ts:
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductListComponent
+  ],  we shouldn't be forgetting to add it into the angular module
+
+------binding with interpolation------------
+
+1. interpolation:
+<h1>{{page header}}</h1>
+
+
+----Adding Logic with Directive---
+
+ng built in directive
+
+structural directive :
+*ngIf
+*ngFor
+both are handled by browser module
+
+----data binding and pipes-----
+
+1. -> property binding
+<img [src] = 'product.imageurl'>
+  
+2. -> interpolation:
+<img src = {{product.imageurl}}>
+
+3. -> Event Binding
+	event	   method
+<button (click) = 'toggleimage()'>
+
+4. -> two way binding:
+			event	    property
+<input type = 'text' [(ngModel)] = 'listFilter'>
+[()] = banana in a box
+ngmodel is an angular directive, it is inside angular module called as formsmodule , whic we need to add in appmodule.ts
+
+ -> pipes:
+transforming data with pipes:
+transform bound properties before display.
+built in pipes:
+date, number, decimal, percent, currency, json, etc.
+we can build our custom modules
+
+-> pipe example:
+{{product.productcode | lowercase }}
+<img [src] ='product.imageUrl'
+     [title] = 'product.productname | uppercase'>
+{{product.price | currency : 'USD' : 'symbol' : '1.2-2' }}
+ 	 
+
+
+
+
+
+

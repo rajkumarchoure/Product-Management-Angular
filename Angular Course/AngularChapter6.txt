@@ -1,0 +1,81 @@
+
+routing and navigation:
+
+--> generate new component by using cmd:
+	ng g c products/product-detail --flat
+	|gbl |			(with flat it will not generate seperate folder, .ts, .html, .css will be within products folder )
+     angular |
+	  component
+
+--> How routing works:
+ configure a route for each component.
+ Activating the route displays the component views.
+
+--> Navigating the application routes:
+  tying routes to action:
+<a [routerLink] = "['/welcome']"> Home </a>
+or
+<a routerLink = "/welcome"> Home </a>
+
+
+
+and we have to access it by using router outlet search.
+
+
+----> Navigation and routing additional technique:
+- passing parameters to a route:
+    reading parameter from route:
+		import activatedrouter from '@angular/router';
+	two ways:
+		snapshote: read the parameter forone time:
+			constructor(private route: ActivatedRoute){
+			this.route.snapshot.paraMap.get('id'); }
+		observable: read emmitted parameter as they change:
+			this.route.paramMap.subscribe(param => console.log(params.get('id')));	
+
+
+
+ - Handling null and undefined:
+	? -> safe navigation operator => prevent null or undefined errors in a template 
+	 product?.productName
+
+	we can also use *ngIf for null or undefined property to prevent from errors.
+
+	we can read the route value or parameter route using ActivatedRoute
+
+- activating a route with code:
+	import { Router } from '@angular/router';
+
+...
+	constructor(private router: Router){}// using as a dependencies.
+	onBack(): void {
+	this.router.navigate(['/products']);}
+ 
+- protecting routes with guards.
+
+  - limit access to a route 
+  - Restrict access to only certain users
+  - Require confiramation before navigating away
+
+	several gaurds from angular:
+ 		- CanActivate:
+ 			gaurd navigation to a route
+ 		- CanDeactivate:
+ 			gaurd navigation from a route
+
+		- Resolve:
+			Pre fetch data before activating a route
+
+ 		- CanLoad:
+			Prevent asynchronous routing
+
+       { path: 'products/:id', canActivate: [ProductDetailGuard], component: ProductDetailComponent },
+     
+command to automatically generate from cli:
+ ng[angular] g[global] g[gaurd] products/product-detail[gaurd path name]
+
+gaurds are services so it needs to be injected by @injectable
+
+Angular routing course on plural sight by deborah kurata.
+
+ 

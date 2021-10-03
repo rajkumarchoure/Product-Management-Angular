@@ -1,0 +1,11 @@
+Building , Testing and deploying with the cli
+
+Overview:
+Generating a new angular app (ng new)
+
+Serving the application (ng serve)
+
+generating code (ng generate)
+
+testing the application (ng test)
+

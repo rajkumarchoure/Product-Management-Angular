@@ -1,0 +1,53 @@
+Angular Modules:
+What is an angular module?
+Angular module metadata
+creating a featur module
+Defining a shared module
+Revisiting app module
+
+Bootstrap array on angular module:
+there should be initial (starting) component inside bootstaparray
+
+Declaration array -//-
+every component , pipe, directive we create must have one and only one angular module
+
+
+
+
+lazy loading module is not in this course for this we need to go for another course of routing module by deborah kurata
+
+
+Imports Array:
+
+imports array truth #1:
+Adding a module to the imports array makes available any components, directives, and pipes defined in that module's exports array.
+
+ng module decorator:
+
+@NgModule({
+Declarations:[ StarComponent], 
+Imports:[ CommonModule],
+Exports:[ CommonModule, FormsModule, StarComponent],
+bootstrap: [AppComponent] })
+
+
+--> Feature Module
+ ProductModule()
+
+generate module using command line:
+ng[angular] g[global] m[module] products/product[path] --flat[it will not generate other folder] -m[import this in to appmodule] app 
+
+RouterModule.forRoot:
+-  registers router service
+- declares router directives
+- exposes cofigured routes
+
+RouterModule.forChild:
+- declares router directives
+- exposes configured routes  
+
+defining a shared module:
+it is kind of common module used to reduce data redundancy.   
+
+clicommand to generate shared module:
+ng g m shared/shared --flat -m products/product.module

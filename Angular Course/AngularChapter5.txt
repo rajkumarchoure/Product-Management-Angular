@@ -1,0 +1,33 @@
+9993342868
+ravi@786
+
+-> Retrieving data using http:
+
+Observables and Reactive Extension:
+Sending http request:
+Exception Handling:
+Subscribing to an observable:
+
+-> Reactive extensions (RxJS) and observables:
+
+ --> We use constructor to inject dependencies
+
+--> we have to subscribe an observable:
+using .subscribe:
+
+- observable doesn't emit values until we subscribe.
+
+const sub = x.subscribe({
+nextfn
+errorfn
+completefn
+})
+or 
+x.subscribe(observer)
+
+
+--> subscribing to an observable: 
+--> unsubscibing from an observable:
+
+
+

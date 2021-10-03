@@ -1,0 +1,32 @@
+services and dependency injection:
+
+-> Services:
+A class with the focused purpose:
+
+Used for feature that :
+are independent from any particular component:
+provide shared data or logic across component:
+encapsulate external interations
+
+
+chapter will contain: 
+building a service,
+registering the service,
+injecting the service
+ 
+
+services are handled by injectors:
+
+dependency injection:
+A coding pattern in which a class receives the instances of objects it needs (called dependencies) from an external source
+rather than creating them itself.
+
+Building a Service:
+create the service class
+define the metadata with a decorator
+import what we need
+
+
+
+ 
+

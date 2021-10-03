@@ -1,0 +1,12 @@
+For this type of error:
+
+ng : File C:\Users\KC\AppData\Roaming\npm\ng.ps1 cannot be loaded because running scripts is 
+disabled on this system. For more information, see about_Execution_Policies at 
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
+
+solution: 
+goto this url:
+
+https://www.c-sharpcorner.com/article/how-to-fix-ps1-can-not-be-loaded-because-running-scripts-is-disabled-on-this-sys/
+
